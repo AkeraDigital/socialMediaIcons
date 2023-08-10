@@ -1,0 +1,83 @@
+:root {
+  --background-color: #212123;
+  --icon-color: #535c68;
+  --background-color-instagram: #e4405f;
+  --background-color-tiktok: #ff0050;
+  --background-color-github: #171515;
+  --background-color-youtube: #cd201f;
+  --background-color-linkedin: #0077b5;
+}
+body {
+  margin: 0;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+  z-index: -10;
+}
+.list_icons {
+  width: 100%;
+  max-width: 50rem;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.element_icon {
+  list-style: none;
+}
+.element_link {
+  display: inline-flex;
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--icon-color);
+  width: 6rem;
+  height: 6rem;
+  transition: 0.5s linear;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+.element_link:hover {
+  color: #fff;
+}
+
+.element_link i {
+  margin: auto;
+}
+.element_link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 6rem;
+  height: 6rem;
+  background: #000;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0);
+  transition: 0.3s cubic-bezier(0.95, 0.32, 0.37, 1.21);
+}
+.element_link:hover::before {
+  transform: scale(1);
+}
+.element_icon:nth-child(1) a:hover:before {
+  background: var(--background-color-instagram);
+}
+.element_icon:nth-child(2) a:hover:before {
+  background: var(--background-color-tiktok);
+}
+.element_icon:nth-child(3) a:hover:before {
+  background: var(--background-color-github);
+}
+.element_icon:nth-child(4) a:hover:before {
+  background: var(--background-color-youtube);
+}
+.element_icon:nth-child(5) a:hover:before {
+  background: var(--background-color-linkedin);
+}
